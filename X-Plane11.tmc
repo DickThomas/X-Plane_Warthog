@@ -15,29 +15,16 @@
 //   along with this program; if not, write to the Free Software Foundation,
 //   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 
- 
-
 
 include "target.tmh"
 include "keymappings.tmh"
 
-char Fuel1;
-char Fuel2;
 
 //program startup
 int main()
 {
     if(Init(&EventHandle)) return 1; // declare the event handler, return on error
-	printf(" this file has been written by Dick Thomas \xa"); 
-	SetKBRate(25, 33);
- 
-}
-
-//event handler
-int EventHandle(int type, alias o, int x)
-{
-    DefaultMapping(&o, x);
-
+	printf(" this file has been written by Dick Thomas\n \xa"); 
 	
 	MapAxis(&Throttle, THR_LEFT, DX_ZROT_AXIS); 
 	MapAxis(&Throttle, THR_RIGHT, DX_Z_AXIS); 
@@ -68,19 +55,19 @@ int EventHandle(int type, alias o, int x)
 	
 //EngOPP
  //L
-	MapKey(&Throttle, EOLIGN , DX6);
-	MapKey(&Throttle, EOLMOTOR  , DX7);
+	MapKey(&Throttle, EOLIGN ,PULSE+DX6);
+	MapKey(&Throttle, EOLMOTOR  , PULSE+DX7);
  //R
-	MapKey(&Throttle, EORIGN , DX8);
-	MapKey(&Throttle, EORMOTOR  , DX9);
+	MapKey(&Throttle, EORIGN , PULSE+DX8);
+	MapKey(&Throttle, EORMOTOR  , PULSE+DX9);
 
 //China HAT
 	MapKey(&Throttle,CHF, ChinaHatForward);
 	MapKey(&Throttle,CHB, ChinaHatBackward );
 	
 //BoatSwitch
-	MapKey(&Throttle,BSF,PULSE+ BoatSwtichForwards);
-	MapKey(&Throttle,BSB,PULSE+ BoatSwtichBackwards);
+	MapKey(&Throttle,BSF, BoatSwtichForwards);
+	MapKey(&Throttle,BSB, BoatSwtichBackwards);
 	
 //SpeedBrake Switch
 	MapKey(&Throttle,SPDF, SpeedBrakesOn);
@@ -102,16 +89,27 @@ int EventHandle(int type, alias o, int x)
 
 
 // FUEL NORM Switches Dont't work
-//	MapKey(&Throttle, EFLNORM , PULSE+DX15);
-//	MapKeyR(&Throttle, EFLNORM ,PULSE+DX16);   	
-//	MapKey(&Throttle, EFRNORM , PULSE+DX15);
-//	MapKeyR(&Throttle, EFRNORM ,PULSE+DX16);   	
+ 	MapKey(&Throttle, EFLNORM , PULSE+DX15);
+	MapKeyR(&Throttle, EFLNORM ,PULSE+DX16);   	
+	MapKey(&Throttle, EFRNORM , PULSE+DX15);
+	MapKeyR(&Throttle, EFRNORM ,PULSE+DX16);   	
    	
    	
 //joystick 
-		
-	MapAxis(&Joystick, JOYX, DX_X_AXIS); 
+	
+	MapAxis(&Joystick, JOYX, DX_X_AXIS);  
 	MapAxis(&Joystick, JOYY, DX_Y_AXIS); 
-	MapKey(&Joystick,TG1,DX8);
+	
+	MapKey(&Joystick,TG1,DX17);
+	
 	
 }
+//event handler
+int EventHandle(int type, alias o, int x)
+{
+    DefaultMapping(&o, x);
+
+	
+
+}
+
