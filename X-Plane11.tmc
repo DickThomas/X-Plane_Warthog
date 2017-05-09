@@ -1,28 +1,117 @@
-// Copyright (c) 2017, Richard (Dick) Thomas (gnuFlyer)
-// Distributed freely under the MIT License.
-//
-// Version 0.1
-// Released December, 2015
-// =======================================================================================
-// v0.1 Initial code
-// =======================================================================================
+//  Script for the Warthog T.A.R.G.E.T software and X-Plane10/11
+//  Copyright (C) Dick Thomas, 2017
 
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation; either version 3 of the License, or
+//   (at your option) any later version.
+
+//   This program is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU General Public License for more details.
+
+//   You should have received a copy of the GNU General Public License
+//   along with this program; if not, write to the Free Software Foundation,
+//   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+
+ 
 
 
 include "target.tmh"
+include "keymappings.tmh"
+
+char Fuel1;
+char Fuel2;
 
 //program startup
 int main()
 {
     if(Init(&EventHandle)) return 1; // declare the event handler, return on error
-	
-	//add initialization code here
+	printf(" this file has been written by Dick Thomas \xa"); 
+	SetKBRate(25, 33);
+ 
 }
 
 //event handler
 int EventHandle(int type, alias o, int x)
 {
     DefaultMapping(&o, x);
+
 	
-	//add event handling code here
+	MapAxis(&Throttle, THR_LEFT, DX_ZROT_AXIS); 
+	MapAxis(&Throttle, THR_RIGHT, DX_Z_AXIS); 
+	
+	MapAxis(&Throttle, THR_FC, DX_SLIDER_AXIS);
+// Slew Controll
+	MapAxis(&Throttle, SCX, DX_XROT_AXIS); 
+	MapAxis(&Throttle, SCY, DX_YROT_AXIS);  
+	
+//Flaps Switch
+	MapKey(&Throttle,FLAPU,flapsUP);
+	MapKey(&Throttle,FLAPD, flapsDown);
+	
+//EAC
+	MapKey(&Throttle,EACON,DX1);
+	MapKey(&Throttle,EACOFF,DX2);
+//RDR Altm
+	MapKey(&Throttle,RDRNRM,DX3);
+	MapKey(&Throttle,RDRDIS,DX4);
+//Landing Gear
+	MapKey(&Throttle,LDGH,DX5);
+// auto pilot  Path/HDG/ALT up to DX11
+	MapKey(&Throttle, APDIS, EXEC("EngageAP();")); 
+	
+//APU Start ON and OFF
+	MapKey(&Throttle, APUON ,PULSE+ L_CTL + 'a');
+	MapKeyR(&Throttle, APUON, PULSE+ L_SHIFT + 'A');
+	
+//EngOPP
+ //L
+	MapKey(&Throttle, EOLIGN , DX6);
+	MapKey(&Throttle, EOLMOTOR  , DX7);
+ //R
+	MapKey(&Throttle, EORIGN , DX8);
+	MapKey(&Throttle, EORMOTOR  , DX9);
+
+//China HAT
+	MapKey(&Throttle,CHF, ChinaHatForward);
+	MapKey(&Throttle,CHB, ChinaHatBackward );
+	
+//BoatSwitch
+	MapKey(&Throttle,BSF,PULSE+ BoatSwtichForwards);
+	MapKey(&Throttle,BSB,PULSE+ BoatSwtichBackwards);
+	
+//SpeedBrake Switch
+	MapKey(&Throttle,SPDF, SpeedBrakesOn);
+	MapKey(&Throttle,SPDB, SpeedBrakesOff);
+	
+	
+//left Throttle button F13
+	MapKey(&Throttle,LTB, USB[0x68]);
+	
+	
+//Mic Switch
+	MapKey(&Throttle, MSU, DX10);
+	MapKey(&Throttle, MSR, DX11);
+	MapKey(&Throttle, MSD, DX12);
+	MapKey(&Throttle, MSL, DX13);
+ //COMS
+	MapKey(&Throttle, MSP , Comms);
+	
+
+
+// FUEL NORM Switches Dont't work
+//	MapKey(&Throttle, EFLNORM , PULSE+DX15);
+//	MapKeyR(&Throttle, EFLNORM ,PULSE+DX16);   	
+//	MapKey(&Throttle, EFRNORM , PULSE+DX15);
+//	MapKeyR(&Throttle, EFRNORM ,PULSE+DX16);   	
+   	
+   	
+//joystick 
+		
+	MapAxis(&Joystick, JOYX, DX_X_AXIS); 
+	MapAxis(&Joystick, JOYY, DX_Y_AXIS); 
+	MapKey(&Joystick,TG1,DX8);
+	
 }

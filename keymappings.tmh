@@ -1,0 +1,42 @@
+//  Script for the Warthog T.A.R.G.E.T software and X-Plane10/11
+//  Copyright (C) Dick Thomas, 2017
+
+//   This program is free software; you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation; either version 3 of the License, or
+//   (at your option) any later version.
+
+//   This program is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU General Public License for more details.
+
+//   You should have received a copy of the GNU General Public License
+//   along with this program; if not, write to the Free Software Foundation,
+//   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+
+ 
+
+
+define Comms ENT
+define flapsUP '1'
+define flapsDown '2'
+define ChinaHatForward '4'
+define ChinaHatBackward '3'
+define BoatSwtichForwards L_CTL + 'u'
+define BoatSwtichBackwards L_CTL + 'd'
+define SpeedBrakesOn '4'
+define SpeedBrakesOff '3'
+
+
+
+int EngageAP() {
+	if(Throttle[RDRNRM]) {
+
+if(Throttle[APALT]) ActKey(KEYON+PULSE+DX8);
+	} else {
+		if(Throttle[APPAT]) ActKey(KEYON+PULSE+DX9);
+		if(Throttle[APAH]) ActKey(KEYON+PULSE+DX10);
+		if(Throttle[APALT]) ActKey(KEYON+PULSE+DX11);
+		}
+	}
