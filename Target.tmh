@@ -1,0 +1,22 @@
+int edEngageAP() {
+	if(Throttle[RDRNRM]) {
+		//if(Throttle[APPAT]) ActKey(KEYON+PULSE+...);
+		//if(Throttle[APAH]) ActKey(KEYON+PULSE+...);
+		if(Throttle[APALT]) ActKey(KEYON+PULSE+vToggleTurret);
+	} else {
+		if(Throttle[APPAT]) ActKey(KEYON+PULSE+vSilentRunning);
+		if(Throttle[APAH]) ActKey(KEYON+PULSE+vSlaveNavToWingman);
+		if(Throttle[APALT]) ActKey(KEYON+PULSE+vDeployHardPoints);
+	}
+}
+
+int edPrintState(){
+	printf("\x0a");
+	printf("------------------------------------------------------------\x0a");
+	printf("Current State:\x0a");
+	printf("inCameraMode = %d\x0a", inCameraMode);
+	printf("rotationCorrection = %d\x0a", rotationCorrection);
+	printf("combinePriSecFire = %d\x0a", combinePriSecFire);
+	printf("------------------------------------------------------------\x0a");
+	printf("\x0a");
+}
