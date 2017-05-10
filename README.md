@@ -4,7 +4,7 @@
 
 ### My Profile for X-Plane 10/11
 
-Due to DirectX contraints of only being able to have 32 buttons I've had to set some items as keypresses
+Due to DirectX constraints of only being able to have 32 buttons I've had to set some items as keypresses
 but tried to use the X-Plane defaults e.g. Flaps up and Down
 
 # HOW TO USE
