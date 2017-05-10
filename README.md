@@ -14,5 +14,5 @@ and click run, Minimize the TARGET window and then load X-Plane, configure your 
 and then Enjoy
 
 
-![Joystick Image](https://github.com/xpd259/X-Plane_Warthog/blob/master/Elite%20Dangerous%20-%20Thrustmaster%20Warthog%20Chart%20-%20Joystick.png)
-![Joystick Image](https://github.com/xpd259/X-Plane_Warthog/blob/master/Elite%20Dangerous%20-%20Thrustmaster%20Warthog%20Chart%20-%20Throttle.png)
+![Joystick Image](https://github.com/xpd259/X-Plane_Warthog/blob/master/Thrustmaster%20Warthog%20Chart%20-%20Joystick.png)
+![Joystick Image](https://github.com/xpd259/X-Plane_Warthog/blob/master/Thrustmaster%20Warthog%20Chart%20-%20Throttle.png)
