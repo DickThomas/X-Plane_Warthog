@@ -91,8 +91,8 @@ int main()
 // FUEL NORM Switches
  	MapKey(&Throttle, EFLNORM , PULSE+DX15);
 	MapKeyR(&Throttle, EFLNORM ,PULSE+DX16);   	
-	MapKey(&Throttle, EFRNORM , PULSE+DX15);
-	MapKeyR(&Throttle, EFRNORM ,PULSE+DX16);   	
+	MapKey(&Throttle, EFRNORM , PULSE+DX17);
+	MapKeyR(&Throttle, EFRNORM ,PULSE+DX32);   	
    	
    	
 //joystick 
