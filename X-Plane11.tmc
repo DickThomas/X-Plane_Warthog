@@ -96,13 +96,24 @@ int main()
    	
    	
 //joystick 
-	
+ //JoyStick Axis
 	MapAxis(&Joystick, JOYX, DX_X_AXIS);  
 	MapAxis(&Joystick, JOYY, DX_Y_AXIS); 
 	
 	MapKey(&Joystick,TG1,DX17);
+	MapKey(&Joystick, S1 , PULSE+DX18);
 	
-	
+ //Hat Trim
+	MapKey(&Joystick, H1U  , DXHATUP);
+	MapKey(&Joystick, H1D  , DXHATDOWN);
+	MapKey(&Joystick, H1L  , DXHATLEFT);
+	MapKey(&Joystick, H1R  , DXHATRIGHT);
+
+ //TMS
+ 	MapKey(&Joystick, H2U  , PULSE+ DX19);
+	MapKey(&Joystick, H2D  , PULSE+ DX20);
+ 	MapKey(&Joystick, H2L  , PULSE+ DX21);
+ 	MapKey(&Joystick, H2R  , PULSE+ DX22);
 }
 //event handler
 int EventHandle(int type, alias o, int x)

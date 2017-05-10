@@ -1,0 +1,105 @@
+Joystick:
+TG1 = DX1
+TG2 = DX6
+S1 = DX5
+S2 = DX2
+S3 = DX3
+S4 = DX4
+
+Trim Control
+H1U = DXHATUP
+H1D = DXHATDOWN
+H1L = DXHATLEFT
+H1R = DXHATRIGHT
+
+TMS
+H2U = DX7
+H2D = DX9
+H2L = DX10
+H2R = DX8
+
+DMS
+H3U = DX11
+H3D = DX13
+H3L = DX14
+H3R = DX12
+
+CMS
+H4U = DX15
+H4D = DX17
+H4L = DX18
+H4R = DX16
+H4P (Hat4 pressed down) = DX19
+
+Throttle:
+Slew Control
+SC (slew control button pressed in) = DX1
+
+Mic Switch
+MSP (mic switch button pressed in) = DX2
+MSU = DX3
+MSR = DX4
+MSD = DX5
+MSL = DX6
+
+Speedbrake Switch
+SPDF = DX7
+SPDB = DX8
+
+Boat Switch
+BSF = DX9
+BSB = DX10
+
+China Hat
+CHF = DX11
+CHB = DX12
+
+Pinky Switch
+PSF = DX13
+PSB = DX14
+
+Left Throttle Button
+LTB = DX15
+
+Engine Fuel Flow Norm/Override Switches
+EFLNORM = DX16
+EFRNORM = DX17
+
+Engine Oper Motor/Norm Switches
+EOLMOTOR = DX18
+EORMOTOR = Dx19
+
+APU Start/Off Switch
+APUON = DX20
+
+Landing Gear Warning Silence
+LDGH = DX21
+
+Flaps
+FLAPU = DX22
+FLAPD = DX23
+
+EAC On/Off
+EACON = DX24
+
+RDR/NORM
+RDRNRM = DX25
+
+LAAP Autopilot Switches
+APENG = DX26
+APPAT = DX27
+APALT = DX28
+
+Throttle Idle Detents
+IDLERON = DX29
+IDLELON = DX30
+
+Engine Oper Ign/Norm
+EOLIGN = DX31
+EORIGN = DX32
+
+Coolie Switch
+CSU = DXHATUP
+CSR = DXHATRIGHT
+CSD = DXHATDOWN
+CSL = DXHATLEFT
