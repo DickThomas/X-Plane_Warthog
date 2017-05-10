@@ -88,7 +88,7 @@ int main()
 	
 
 
-// FUEL NORM Switches Dont't work
+// FUEL NORM Switches
  	MapKey(&Throttle, EFLNORM , PULSE+DX15);
 	MapKeyR(&Throttle, EFLNORM ,PULSE+DX16);   	
 	MapKey(&Throttle, EFRNORM , PULSE+DX15);
@@ -102,7 +102,8 @@ int main()
 	
 	MapKey(&Joystick,TG1,DX17);
 	MapKey(&Joystick, S1 , PULSE+DX18);
-	
+	MapKey(&Joystick, S3,DX29);
+	MapKey(&Joystick, S4 , PULSE+DX30);
  //Hat Trim
 	MapKey(&Joystick, H1U  , DXHATUP);
 	MapKey(&Joystick, H1D  , DXHATDOWN);
@@ -114,6 +115,24 @@ int main()
 	MapKey(&Joystick, H2D  , PULSE+ DX20);
  	MapKey(&Joystick, H2L  , PULSE+ DX21);
  	MapKey(&Joystick, H2R  , PULSE+ DX22);
+ 	
+ //DMS
+ 	MapKey(&Joystick, H3U  , PULSE+ DX23);
+	MapKey(&Joystick, H3D  , PULSE+ DX24);
+ 	MapKey(&Joystick, H3L  , PULSE+ DX25);
+ 	MapKey(&Joystick, H3R  , PULSE+ DX24);
+ 
+ //CMS
+ 	MapKey(&Joystick, H4U  , PULSE+ DX25);
+	MapKey(&Joystick, H4D  , PULSE+ DX26);
+ 	MapKey(&Joystick, H4L  , PULSE+ DX27);
+ 	MapKey(&Joystick, H4R  , PULSE+ DX28);
+ 	MapKey(&Joystick, H4P  , PULSE+ DX29);
+ 
+ // Pinky Switch
+ 	MapKey(&Throttle, PSF   , PULSE+ DX30);
+ 	MapKey(&Throttle, PSB   , PULSE+ DX31);
+ 
 }
 //event handler
 int EventHandle(int type, alias o, int x)
